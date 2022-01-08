@@ -27,26 +27,63 @@
                 let confirm = (choice == rock) ? alert("You have selected rock")+console.log("You have selected rock") : 
                 (choice == paper) ? alert("You have selected paper")+console.log("You have selected paper"):
                 (choice ==scissors) ? alert("You have selected scissors")+console.log("You have selected scissors") :
-                alert("Please select rock, paper, or scissors");
+                alert("Please come back when you learn how to play");
                 return(choice)
              }
             // Set up a round of r-p-s
             function round(){
             let match = playerChoice()+ "-" +computerPlay();
             switch(match) {
-                case "rock-rock": return("You tied."); break;
-                case "rock-paper": return("Paper beats rock, you lose."); break;
-                case "rock-scissors": return("Rock beats scissors, you win!"); break;
-                case "paper-rock": return("Paper beats rock, you win!"); break;
-                case "paper-paper": return("You tied."); break;
-                case "paper-scissors": return("Scissors beats paper, you lose."); break;
-                case "scissors-rock": return("Rock beats scissors, you lose."); break;
-                case "scissors-paper": return("Scissors beats paper, you win!"); break;
-                case "scissors-scissors": return("You tied."); break;
-                default: return("error");
+                case "rock-rock": console.log("You tied");return("You tied"); break;
+                case "rock-paper": console.log("Paper beats rock, you lose.");return("Paper beats rock, you lose."); break;
+                case "rock-scissors": console.log("Rock beats scissors, you win!");return("Rock beats scissors, you win!"); break;
+                case "paper-rock": console.log("Paper beats rock, you win!"); return("Paper beats rock, you win!"); break;
+                case "paper-paper": console.log("You tied."); return("You tied.");break;
+                case "paper-scissors": console.log("Scissors beats paper, you lose.");return("Scissors beats paper, you lose."); break;
+                case "scissors-rock": console.log("Rock beats scissors, you lose."); return("Rock beats scissors, you lose.");break;
+                case "scissors-paper": console.log("Scissors beats paper, you win!");return("Scissors beats paper, you win!"); break;
+                case "scissors-scissors": console.log("You tied."); return("You tied."); break;
+                default: console.log("error");
                 }
-                }
-            console.log(round())
+            }
+            
+            // Set up a game of 5 rounds
+            function game() {
+            let x = 0
+            let y = 0
+            let round1 = round();
+            let end = round1.slice(-1)
+            let result = end == "d" ? (++x,++y) : 
+            end == "." ? ++y :
+            end == "!" ? ++x :
+            "error";
+            let score = "Score"+" "+x+"-"+y;
+            console.log(score)
+
+            let round2 = round()
+            let end2 = round2.slice(-1)
+            let result2 = end2 == "d" ? (++x,++y) : 
+            end2 == "." ? ++y :
+            end2 == "!" ? ++x :
+            "error";
+            let score2 = "Score"+" "+x+"-"+y;
+            console.log(score2)
+
+            let round3 = round()
+            let end3 = round3.slice(-1)
+            let result3 = end3 == "d" ? (++x,++y) : 
+            end3 == "." ? ++y :
+            end3 == "!" ? ++x :
+            "error";
+            let score3 = "Score"+" "+x+"-"+y;
+            console.log(score3)
+
+            let game = x==3&&y<3 ? ("Congratuations! You win!") :
+            y==3 ? ("Game over. You lose.") :
+            ("Final round..?");
+            console.log(game)
+        }
+            game()
         </script>
     </body>
     </html>
