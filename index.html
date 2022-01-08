@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>rock-paper-scissors</title>
+        <meta charset="utf-8">
+    </header>
+
+    <body>
+        <script>
+            const rock = "rock"
+            const paper = "paper"
+            const scissors = "scissors"
+            // define cpu's random move
+            function computerPlay() {
+              let move = (Math.random() <= 0.333) ? rock :
+                (Math.random() <= .667) ? paper :
+                scissors;
+                
+                console.log(move)
+            }
+        </script>
+    </body>
+    </html>
