@@ -15,8 +15,11 @@
               let move = (Math.random() <= 0.333) ? rock :
                 (Math.random() <= .667) ? paper :
                 scissors;
-                
-                console.log(move)
+            // share cpu's move with player
+            let script = (move==rock) ? console.log("CPU has selected rock"):
+                (move==paper) ? console.log("CPU has selected paper") :
+                console.log("CPU has selected scissors");
+              return(move)
             }
         </script>
     </body>
