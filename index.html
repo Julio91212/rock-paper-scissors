@@ -82,7 +82,36 @@
             y==3 ? ("Game over. You lose.") :
             ("Final round..?");
             console.log(game)
-        }
+            if (game=="Final round..?") {
+            let round4 = round()
+            let end4 = round4.slice(-1)
+            let result4= end4 == "d" ? (++x,++y) : 
+            end4 == "." ? ++y :
+            end4 == "!" ? ++x :
+            "error";
+            let score4 = "Score"+" "+x+"-"+y;
+            console.log(score4)
+            let game = x==3&&y<3 ? ("Congratuations! You win!") :
+            y==3&&x<3 ? ("Game over. You lose.") :
+            ("Final round..?");
+            console.log(game)
+            if (game=="Final round..?") {
+            let round5 = round()
+            let end5 = round5.slice(-1)
+            let result5= end5 == "d" ? (++x,++y) : 
+            end5 == "." ? ++y :
+            end5 == "!" ? ++x :
+            "error";
+            let score5 = "Score"+" "+x+"-"+y;
+            console.log(score5)
+            let game = x==3&&y<3 ? ("Congratuations! You win!") :
+            y==3&&x<3 ? ("Game over. You lose.") :
+            ("Game over. You tied");
+            }
+            else {null}
+            } else { null }
+            console.log("Thank you for playing!")
+            }
             game()
         </script>
     </body>
