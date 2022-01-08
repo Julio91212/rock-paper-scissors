@@ -29,6 +29,24 @@
                 (choice ==scissors) ? alert("You have selected scissors")+console.log("You have selected scissors") :
                 alert("Please select rock, paper, or scissors");
                 return(choice)
+             }
+            // Set up a round of r-p-s
+            function round(){
+            let match = playerChoice()+ "-" +computerPlay();
+            switch(match) {
+                case "rock-rock": return("You tied."); break;
+                case "rock-paper": return("Paper beats rock, you lose."); break;
+                case "rock-scissors": return("Rock beats scissors, you win!"); break;
+                case "paper-rock": return("Paper beats rock, you win!"); break;
+                case "paper-paper": return("You tied."); break;
+                case "paper-scissors": return("Scissors beats paper, you lose."); break;
+                case "scissors-rock": return("Rock beats scissors, you lose."); break;
+                case "scissors-paper": return("Scissors beats paper, you win!"); break;
+                case "scissors-scissors": return("You tied."); break;
+                default: return("error");
+                }
+                }
+            console.log(round())
         </script>
     </body>
     </html>
