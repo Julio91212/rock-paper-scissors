@@ -21,6 +21,14 @@
                 console.log("CPU has selected scissors");
               return(move)
             }
+            // Allow player to make selection
+             function playerChoice() {
+                const choice = prompt("What is your choice?").toLowerCase();
+                let confirm = (choice == rock) ? alert("You have selected rock")+console.log("You have selected rock") : 
+                (choice == paper) ? alert("You have selected paper")+console.log("You have selected paper"):
+                (choice ==scissors) ? alert("You have selected scissors")+console.log("You have selected scissors") :
+                alert("Please select rock, paper, or scissors");
+                return(choice)
         </script>
     </body>
     </html>
