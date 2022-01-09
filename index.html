@@ -49,8 +49,10 @@
             
             // Set up a game of 5 rounds
             function game() {
+            // Set score variables
             let x = 0
             let y = 0
+            // Define score change after round 1
             let round1 = round();
             let cut = round1.slice(-2)
             let end = cut.charAt(0)
@@ -60,7 +62,7 @@
             "error";
             let score = "Score"+" "+x+"-"+y;
             console.log(score)
-
+            // Define score change after round 2
             let round2 = round()
             let cut2 = round2.slice(-2)
             let end2 = cut2.charAt(0)
@@ -70,17 +72,17 @@
             "error";
             let score2 = "Score"+" "+x+"-"+y;
             console.log(score2)
-
+            // Define score change after round 3
             let round3 = round()
             let cut3 = round3.slice(-2)
             let end3 = cut3.charAt(0)
             let result3 = end3 == "d" ? (++x,++y) : 
-            end3 == "." ? ++y :
-            end3 == "!" ? ++x :
+            end3 == "e" ? ++y :
+            end3 == "n" ? ++x :
             "error";
             let score3 = "Score"+" "+x+"-"+y;
             console.log(score3)
-
+            // Allow game to end if winner is identified or continue to round 4 otherwise
             let game = x==3&&y<3 ? ("Congratuations! You win!") :
             y==3 ? ("Game over. You lose.") :
             ("Final round..?");
@@ -90,11 +92,12 @@
             let cut4 = round4.slice(-2)
             let end4 = cut4.charAt(0)
             let result4= end4 == "d" ? (++x,++y) : 
-            end4 == "." ? ++y :
-            end4 == "!" ? ++x :
+            end4 == "e" ? ++y :
+            end4 == "n" ? ++x :
             "error";
             let score4 = "Score"+" "+x+"-"+y;
             console.log(score4)
+            // Allow game to end if winner is identified or continue to round 5 otherwise
             let game = x==3&&y<3 ? ("Congratuations! You win!") :
             y==3&&x<3 ? ("Game over. You lose.") :
             ("Final round..?");
@@ -104,17 +107,18 @@
             let cut5 = round5.slice(-2)
             let end5 = cut5.charAt(0)
             let result5= end5 == "d" ? (++x,++y) : 
-            end5 == "." ? ++y :
-            end5 == "!" ? ++x :
+            end5 == "e" ? ++y :
+            end5 == "n" ? ++x :
             "error";
             let score5 = "Score"+" "+x+"-"+y;
             console.log(score5)
+            // Allow game to end
             let game = x==3&&y<3 ? ("Congratuations! You win!") :
             y==3&&x<3 ? ("Game over. You lose.") :
             ("Game over. You tied");
             }
             else {null}
-            } else { null }
+            } else {null}
             console.log("Thank you for playing!")
             }
             game()
