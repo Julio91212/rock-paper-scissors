@@ -16,18 +16,18 @@
                 (Math.random() <= .667) ? paper :
                 scissors;
             // share cpu's move with player
-            let script = (move==rock) ? console.log("CPU has selected rock"):
-                (move==paper) ? console.log("CPU has selected paper") :
-                console.log("CPU has selected scissors");
+            let script = (move==rock) ? console.log("CPU has selected rock."):
+                (move==paper) ? console.log("CPU has selected paper.") :
+                console.log("CPU has selected scissors.");
               return(move)
             }
             // Allow player to make selection
              function playerChoice() {
                 const choice = prompt("What is your choice?").toLowerCase();
-                let confirm = (choice == rock) ? alert("You have selected rock")+console.log("You have selected rock") : 
-                (choice == paper) ? alert("You have selected paper")+console.log("You have selected paper"):
-                (choice ==scissors) ? alert("You have selected scissors")+console.log("You have selected scissors") :
-                alert("Please come back when you learn how to play");
+                let confirm = (choice == rock) ? alert("You have selected rock.")+console.log("You have selected rock.") : 
+                (choice == paper) ? alert("You have selected paper.")+console.log("You have selected paper."):
+                (choice ==scissors) ? alert("You have selected scissors.")+console.log("You have selected scissors.") :
+                alert("Please come back when you learn how to play.");
                 return(choice)
              }
             // Set up a round of r-p-s
@@ -38,11 +38,11 @@
                 case "rock-paper": console.log("Paper beats rock, you lose.");return("Paper beats rock, you lose."); break;
                 case "rock-scissors": console.log("Rock beats scissors, you win!");return("Rock beats scissors, you win!"); break;
                 case "paper-rock": console.log("Paper beats rock, you win!"); return("Paper beats rock, you win!"); break;
-                case "paper-paper": console.log("You tied."); return("You tied.");break;
+                case "paper-paper": console.log("You tied."); return("You tied");break;
                 case "paper-scissors": console.log("Scissors beats paper, you lose.");return("Scissors beats paper, you lose."); break;
                 case "scissors-rock": console.log("Rock beats scissors, you lose."); return("Rock beats scissors, you lose.");break;
                 case "scissors-paper": console.log("Scissors beats paper, you win!");return("Scissors beats paper, you win!"); break;
-                case "scissors-scissors": console.log("You tied."); return("You tied."); break;
+                case "scissors-scissors": console.log("You tied."); return("You tied"); break;
                 default: console.log("error");
                 }
             }
