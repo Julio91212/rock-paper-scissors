@@ -34,15 +34,15 @@
             function round(){
             let match = playerChoice()+ "-" +computerPlay();
             switch(match) {
-                case "rock-rock": console.log("You tied");return("You tied"); break;
+                case "rock-rock": console.log("You tied.");return("You tied."); break;
                 case "rock-paper": console.log("Paper beats rock, you lose.");return("Paper beats rock, you lose."); break;
                 case "rock-scissors": console.log("Rock beats scissors, you win!");return("Rock beats scissors, you win!"); break;
                 case "paper-rock": console.log("Paper beats rock, you win!"); return("Paper beats rock, you win!"); break;
-                case "paper-paper": console.log("You tied."); return("You tied");break;
+                case "paper-paper": console.log("You tied."); return("You tied.");break;
                 case "paper-scissors": console.log("Scissors beats paper, you lose.");return("Scissors beats paper, you lose."); break;
                 case "scissors-rock": console.log("Rock beats scissors, you lose."); return("Rock beats scissors, you lose.");break;
                 case "scissors-paper": console.log("Scissors beats paper, you win!");return("Scissors beats paper, you win!"); break;
-                case "scissors-scissors": console.log("You tied."); return("You tied"); break;
+                case "scissors-scissors": console.log("You tied."); return("You tied."); break;
                 default: console.log("error");
                 }
             }
@@ -52,25 +52,28 @@
             let x = 0
             let y = 0
             let round1 = round();
-            let end = round1.slice(-1)
+            let cut = round1.slice(-2)
+            let end = cut.charAt(0)
             let result = end == "d" ? (++x,++y) : 
-            end == "." ? ++y :
-            end == "!" ? ++x :
+            end == "e" ? ++y :
+            end == "n" ? ++x :
             "error";
             let score = "Score"+" "+x+"-"+y;
             console.log(score)
 
             let round2 = round()
-            let end2 = round2.slice(-1)
+            let cut2 = round2.slice(-2)
+            let end2 = cut2.charAt(0)
             let result2 = end2 == "d" ? (++x,++y) : 
-            end2 == "." ? ++y :
-            end2 == "!" ? ++x :
+            end2 == "e" ? ++y :
+            end2 == "n" ? ++x :
             "error";
             let score2 = "Score"+" "+x+"-"+y;
             console.log(score2)
 
             let round3 = round()
-            let end3 = round3.slice(-1)
+            let cut3 = round3.slice(-2)
+            let end3 = cut3.charAt(0)
             let result3 = end3 == "d" ? (++x,++y) : 
             end3 == "." ? ++y :
             end3 == "!" ? ++x :
@@ -84,7 +87,8 @@
             console.log(game)
             if (game=="Final round..?") {
             let round4 = round()
-            let end4 = round4.slice(-1)
+            let cut4 = round4.slice(-2)
+            let end4 = cut4.charAt(0)
             let result4= end4 == "d" ? (++x,++y) : 
             end4 == "." ? ++y :
             end4 == "!" ? ++x :
@@ -97,7 +101,8 @@
             console.log(game)
             if (game=="Final round..?") {
             let round5 = round()
-            let end5 = round5.slice(-1)
+            let cut5 = round5.slice(-2)
+            let end5 = cut5.charAt(0)
             let result5= end5 == "d" ? (++x,++y) : 
             end5 == "." ? ++y :
             end5 == "!" ? ++x :
