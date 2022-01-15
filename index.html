@@ -1,127 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <title>rock-paper-scissors</title>
-        <meta charset="utf-8">
-    </header>
+<header>
+    <title>rock-paper-scissors</title>
+    <meta charset="utf-8">
+    <script src="file.js" defer></script>
+</header>
 
-    <body>
-        <script>
-            const rock = "rock"
-            const paper = "paper"
-            const scissors = "scissors"
-            // define cpu's random move
-            function computerPlay() {
-              let move = (Math.random() <= 0.333) ? rock :
-                (Math.random() <= .667) ? paper :
-                scissors;
-            // share cpu's move with player
-            let script = (move==rock) ? console.log("CPU has selected rock."):
-                (move==paper) ? console.log("CPU has selected paper.") :
-                console.log("CPU has selected scissors.");
-              return(move)
-            }
-            // Allow player to make selection
-             function playerChoice() {
-                const choice = prompt("What is your choice?").toLowerCase();
-                let confirm = (choice == rock) ? alert("You have selected rock.")+console.log("You have selected rock.") : 
-                (choice == paper) ? alert("You have selected paper.")+console.log("You have selected paper."):
-                (choice ==scissors) ? alert("You have selected scissors.")+console.log("You have selected scissors.") :
-                alert("Please come back when you learn how to play.");
-                return(choice)
-             }
-            // Set up a round of r-p-s
-            function round(){
-            let match = playerChoice()+ "-" +computerPlay();
-            switch(match) {
-                case "rock-rock": console.log("You tied.");return("You tied."); break;
-                case "rock-paper": console.log("Paper beats rock, you lose.");return("Paper beats rock, you lose."); break;
-                case "rock-scissors": console.log("Rock beats scissors, you win!");return("Rock beats scissors, you win!"); break;
-                case "paper-rock": console.log("Paper beats rock, you win!"); return("Paper beats rock, you win!"); break;
-                case "paper-paper": console.log("You tied."); return("You tied.");break;
-                case "paper-scissors": console.log("Scissors beats paper, you lose.");return("Scissors beats paper, you lose."); break;
-                case "scissors-rock": console.log("Rock beats scissors, you lose."); return("Rock beats scissors, you lose.");break;
-                case "scissors-paper": console.log("Scissors beats paper, you win!");return("Scissors beats paper, you win!"); break;
-                case "scissors-scissors": console.log("You tied."); return("You tied."); break;
-                default: console.log("error");
-                }
-            }
-            
-            // Set up a game of 5 rounds
-            function game() {
-            // Set score variables
-            let x = 0
-            let y = 0
-            // Define score change after round 1
-            let round1 = round();
-            let cut = round1.slice(-2)
-            let end = cut.charAt(0)
-            let result = end == "d" ? (++x,++y) : 
-            end == "e" ? ++y :
-            end == "n" ? ++x :
-            "error";
-            let score = "Score"+" "+x+"-"+y;
-            console.log(score)
-            // Define score change after round 2
-            let round2 = round()
-            let cut2 = round2.slice(-2)
-            let end2 = cut2.charAt(0)
-            let result2 = end2 == "d" ? (++x,++y) : 
-            end2 == "e" ? ++y :
-            end2 == "n" ? ++x :
-            "error";
-            let score2 = "Score"+" "+x+"-"+y;
-            console.log(score2)
-            // Define score change after round 3
-            let round3 = round()
-            let cut3 = round3.slice(-2)
-            let end3 = cut3.charAt(0)
-            let result3 = end3 == "d" ? (++x,++y) : 
-            end3 == "e" ? ++y :
-            end3 == "n" ? ++x :
-            "error";
-            let score3 = "Score"+" "+x+"-"+y;
-            console.log(score3)
-            // Allow game to end if winner is identified or continue to round 4 otherwise
-            let game = x==3&&y<3 ? ("Congratuations! You win!") :
-            y==3 ? ("Game over. You lose.") :
-            ("Final round..?");
-            console.log(game)
-            if (game=="Final round..?") {
-            let round4 = round()
-            let cut4 = round4.slice(-2)
-            let end4 = cut4.charAt(0)
-            let result4= end4 == "d" ? (++x,++y) : 
-            end4 == "e" ? ++y :
-            end4 == "n" ? ++x :
-            "error";
-            let score4 = "Score"+" "+x+"-"+y;
-            console.log(score4)
-            // Allow game to end if winner is identified or continue to round 5 otherwise
-            let game = x==3&&y<3 ? ("Congratuations! You win!") :
-            y==3&&x<3 ? ("Game over. You lose.") :
-            ("Final round..?");
-            console.log(game)
-            if (game=="Final round..?") {
-            let round5 = round()
-            let cut5 = round5.slice(-2)
-            let end5 = cut5.charAt(0)
-            let result5= end5 == "d" ? (++x,++y) : 
-            end5 == "e" ? ++y :
-            end5 == "n" ? ++x :
-            "error";
-            let score5 = "Score"+" "+x+"-"+y;
-            console.log(score5)
-            // Allow game to end
-            let game = x==3&&y<3 ? ("Congratuations! You win!") :
-            y==3&&x<3 ? ("Game over. You lose.") :
-            ("Game over. You tied");
-            }
-            else {null}
-            } else {null}
-            console.log("Thank you for playing!")
-            }
-            game()
-        </script>
-    </body>
-    </html>
+<body>
+    <button class="rock">rock</button>
+    <button class="paper">paper</button>
+    <button class="scissors">scissors</button>
+    <div id=results></div>
+</body>
+
+</html>
